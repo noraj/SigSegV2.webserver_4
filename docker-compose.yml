@@ -1,0 +1,36 @@
+# Author: noraj
+version: '3'
+services:
+  webserver4_demo:
+    build: demo_server
+    image: webserver4_demo
+    user: noraj
+    container_name: webserver4_demo
+    ports:
+      - "42423:9999" # port externe / port du docker
+    networks:
+      - webserver4
+    restart: always
+    read_only: true
+    environment:
+      - FLAG=sigsegv{this_is_just_a_demo}
+  webserver4_flag:
+    build: flag_server
+    image: webserver4_flag
+    user: noraj
+    container_name: webserver4_flag
+    ports:
+      - "42424:9999" # port externe / port du docker
+    networks:
+      - webserver4
+    restart: always
+    read_only: false
+    environment:
+      - FLAG=sigsegv{n1ce_SSTI_sc3nario_r1ght?}
+
+networks:
+  webserver4:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "false" # le container n'aura pas acces a internet
+      com.docker.network.bridge.name: "webserver_4" # nom du repo

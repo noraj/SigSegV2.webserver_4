@@ -1,0 +1,71 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    /! <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    link rel="stylesheet" href="css/bulma.min.css"
+    link rel="stylesheet" href="css/site.css"
+    /! <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    script defer="" src="js/fa.js"
+    /! <script src="https://cdn.jsdelivr.net/npm/@vizuaalog/bulmajs@0.10.2/dist/bulma.js"></script>
+    script src="js/bulma.js"
+    title Fat
+  body
+    section.section
+      div.container
+        h1.title Fat
+        div class="notification is-primary #{@hide}"
+          button.delete
+          | #{@message}
+        div.tabs-wrapper
+          div.tabs
+            ul
+              li.is-active
+                a Login
+              li
+                a Register
+          div.tabs-content
+            ul
+              li.is-active
+                form action="/auth" method="POST"
+                  div.field
+                    label.label Username
+                    div.control.has-icons-left
+                      input.input name="username" type="text" placeholder="demo"
+                      span.icon.is-small.is-left
+                        i.fas.fa-user
+                  div.field
+                    label.label Password
+                    div.control.has-icons-left
+                      input.input name="password" type="password" placeholder="demo"
+                      span.icon.is-small.is-left
+                        i.fas.fa-key
+                  div.control
+                    button.button.is-primary type="submit" Login
+              li
+                form action="/register" method="POST"
+                  div.field
+                    label.label Username
+                    div.control.has-icons-left
+                      input.input name="username" type="text" placeholder="disabled" disabled=""
+                      span.icon.is-small.is-left
+                        i.fas.fa-user
+                  div.field
+                    label.label Password
+                    div.control.has-icons-left
+                      input.input name="password" type="password" placeholder="disabled" disabled=""
+                      span.icon.is-small.is-left
+                        i.fas.fa-key
+                  div.control
+                    button.button.is-primary type="submit" Register
+    footer.footer
+      div.content.has-text-centered
+        p
+          | Made with
+          span.icon.has-text-danger
+            i.fas.fa-heart
+          | by 
+          span.has-text-weight-semibold
+            a.has-text-primary href="https://pwn.by/noraj/" noraj
+

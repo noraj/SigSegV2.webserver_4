@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    /! <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    link rel="stylesheet" href="/css/bulma.min.css"
+    link rel="stylesheet" href="/css/site.css"
+    /! <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    script defer="" src="/js/fa.js"
+    /! <script src="https://cdn.jsdelivr.net/npm/@vizuaalog/bulmajs@0.10.2/dist/bulma.js"></script>
+    script src="/js/bulma.js"
+    title Fat
+  body
+    section.section
+      div.container
+        h1.title Welcome, #{@user}!
+        a href="/logout" Log Out
+        pre
+          code #{@content}
+    footer.footer
+      div.content.has-text-centered
+        p
+          | Made with
+          span.icon.has-text-danger
+            i.fas.fa-heart
+          | by 
+          span.has-text-weight-semibold
+            a.has-text-primary href="https://pwn.by/noraj/" noraj
