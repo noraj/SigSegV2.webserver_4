@@ -76,3 +76,9 @@ Add `-d` if you want to detach the container.
 ## Flag
 
 `sigsegv{n1ce_SSTI_sc3nario_r1ght?}`
+
+## SigSegV2
+
+A web challenge that was available during SigSegV2 CTF (2019).
+
+6 teams on 36 flaged this challenge.
